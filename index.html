@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SWF File Execution</title>
+    <title>Mighty Knight 2</title>
+    <script src="https://ruffle.rs/latest/ruffle.js"></script>
+    <style>
+        #ruffle-container {
+            width: 800px;
+            height: 600px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <embed src="https://chusopro066.github.io/mightyknighs2wf/mighty-knight-2.swf" width="800" height="600">
+    <div id="ruffle-container"></div>
+
+    <script>
+        var swfElement = document.createElement("div");
+        swfElement.setAttribute("style", "width: 100%; height: 100%;");
+
+        var params = {
+            "swf": "https://chusopro066.github.io/mightyknighs2wf/mighty-knight-2.swf",
+            "useOption": "true",
+            "useNavBar": "true",
+            "direct": "true"
+        };
+
+        RufflePlayer.embed(swfElement, params)
+            .then((player) => {
+                document.getElementById("ruffle-container").appendChild(player);
+            })
+            .catch((error) => {
+                console.log("Error loading Ruffle: " + error);
+            });
+    </script>
 </body>
 </html>
