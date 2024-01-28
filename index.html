@@ -2,12 +2,15 @@
 <html>
 <head>
   <title>Mighty Knight 2</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-  <script>
-    swfobject.embedSWF("https://chusopro066.github.io/mightyknighs2wf/mighty-knight-2.swf", "game-container", "800", "600", "9.0.0");
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@rufflejs/ruffle@0.3.0/dist/ruffle.js"></script>
 </head>
 <body>
-  <div id="game-container"></div>
+  <script>
+    const rufflePlayer = document.createElement("ruffle-player");
+    rufflePlayer.setAttribute("src", "https://chusopro066.github.io/mightyknighs2wf/mighty-knight-2.swf");
+    rufflePlayer.setAttribute("width", "800");
+    rufflePlayer.setAttribute("height", "600");
+    document.body.appendChild(rufflePlayer);
+  </script>
 </body>
 </html>
